@@ -17,7 +17,7 @@ import { BrowserModule } from '@angular/platform-browser';
   providers: [BuildService]
 })
 export class AppComponent implements OnInit {
-  title = 'This is the title. New title. Again!!!!!!';
+  title = 'This is the title. New title. Again!!!!!!!';
   build: Build;
 
   constructor(private buildService: BuildService) { }
