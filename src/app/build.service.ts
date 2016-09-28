@@ -11,7 +11,7 @@ export class BuildService {
 
   getBuild() : Observable<Build> {
     return this.http
-      .get('/build.json')
+      .get('/assets/build.json')
       .map((res:Response) => res.json());
   }
 }
