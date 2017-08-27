@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Default</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ItemType>GenericProject</ItemType>
+    <ProjectGuid>{B05ED606-B643-42B4-B689-7B03218C6A31}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Default|AnyCPU' ">
+    <OutputPath>.\</OutputPath>
+    <CustomCommands>
+      <CustomCommands>
+        <Command>
+          <type>Build</type>
+          <command>ng build</command>
+        </Command>
+        <Command>
+          <type>Custom</type>
+          <name>Run</name>
+          <command>ng serve</command>
+          <externalConsole>True</externalConsole>
+        </Command>
+      </CustomCommands>
+    </CustomCommands>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="e2e\app.e2e-spec.ts" />
+    <None Include="e2e\app.po.ts" />
+    <None Include="e2e\tsconfig.e2e.json" />
+    <None Include=".angular-cli.json" />
+    <None Include=".editorconfig" />
+    <None Include=".gitignore" />
+    <None Include="src\app\app.component.css" />
+    <None Include="src\app\app.component.html" />
+    <None Include="src\app\app.component.spec.ts" />
+    <None Include="src\app\app.component.ts" />
+    <None Include="src\app\app.module.ts" />
+    <None Include="src\assets\.gitkeep" />
+    <None Include="src\environments\environment.prod.ts" />
+    <None Include="src\environments\environment.ts" />
+    <None Include="src\favicon.ico" />
+    <None Include="src\index.html" />
+    <None Include="src\main.ts" />
+    <None Include="src\polyfills.ts" />
+    <None Include="src\styles.css" />
+    <None Include="src\test.ts" />
+    <None Include="src\tsconfig.app.json" />
+    <None Include="src\tsconfig.spec.json" />
+    <None Include="src\typings.d.ts" />
+    <None Include="package.json" />
+    <None Include="protractor.conf.js" />
+    <None Include="README.md" />
+    <None Include="tsconfig.json" />
+    <None Include="tslint.json" />
+    <None Include="karma.conf.js" />
+  </ItemGroup>
+</Project>
