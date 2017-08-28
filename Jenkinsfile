@@ -1,14 +1,18 @@
 node {
 
-    currentBuild.displayName = "1.0.0.0"
+    def versionJson = readJSON file: 'version.json'
+    def version =  "${versionJson.major}.${versionJson.minor}.${versionJson.patch}.${BUILD_ID}"
     
     stage('Checkout') {
         echo "Checking out source control"
         checkout scm
     }
 
+    stage('Version') {
+        currentBuild.displayName = version
+    }
+
     stage('Build') {
         echo "Building from source"
-        checkout scm
     }
 }
