@@ -1,8 +1,6 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2FEBDEF4-8575-4E20-BCFB-2D484F4D8025}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pierrethelusma.api", "pierrethelusma.api\pierrethelusma.api.csproj", "{178426EE-86C4-4BD7-AD3C-7C8427E9BC1B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pierrethelusma.identity", "pierrethelusma.identity\pierrethelusma.identity.csproj", "{DC263206-7BEE-42A9-8649-7329CBC4575F}"
@@ -36,8 +34,5 @@ Global
 		{B05ED606-B643-42B4-B689-7B03218C6A31}.Default|Any CPU.Build.0 = Default|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{178426EE-86C4-4BD7-AD3C-7C8427E9BC1B} = {2FEBDEF4-8575-4E20-BCFB-2D484F4D8025}
-		{DC263206-7BEE-42A9-8649-7329CBC4575F} = {2FEBDEF4-8575-4E20-BCFB-2D484F4D8025}
-		{B05ED606-B643-42B4-B689-7B03218C6A31} = {2FEBDEF4-8575-4E20-BCFB-2D484F4D8025}
 	EndGlobalSection
 EndGlobal
