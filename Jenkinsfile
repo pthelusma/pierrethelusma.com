@@ -1,4 +1,7 @@
 node {
+
+    currentBuild.displayName = "1.0.0.0"
+    
     stage('Checkout') {
         echo "Checking out source control"
         checkout scm
