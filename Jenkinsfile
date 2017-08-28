@@ -1,6 +1,6 @@
 node {
 
-    def versionJson = readJSON file: 'version.json'
+    def versionJson = readJSON file: './version.json'
     def version =  "${versionJson.major}.${versionJson.minor}.${versionJson.patch}.${BUILD_ID}"
     
     stage('Checkout') {
