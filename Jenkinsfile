@@ -15,4 +15,8 @@ node {
     stage('Build') {
         echo "Building from source"
     }
+
+    stage('Deploy') {
+        echo "Deploying"
+    }
 }
