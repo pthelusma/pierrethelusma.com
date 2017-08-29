@@ -21,6 +21,16 @@ node {
         }
     }
 
+    stage('Publish') {
+        echo "Publishing from build"
+        parallel api: {
+            bat "dotnet publish ./pierrethelusma.api/ --output C:/inetpub/wwwroot/pierrethelusma.com_api/"
+        },
+        identity: {
+            bat "dotnet publish ./pierrethelusma.identity/ --output C:/inetpub/wwwroot/pierrethelusma.com_identity/"
+        }
+    }
+
     stage('Deploy') {
         echo "Deploying"
     }
