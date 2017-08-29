@@ -13,6 +13,12 @@ node {
 
     stage('Build') {
         echo "Building from source"
+        parallel api: {
+            bat "dotnet restore ./pierrethelusma.api/"
+        },
+        identity: {
+            bat "dotnet restore ./pierrethelusma.identity/"
+        }
     }
 
     stage('Deploy') {
