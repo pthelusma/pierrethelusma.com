@@ -28,6 +28,9 @@ node {
         },
         identity: {
             bat "dotnet publish ./pierrethelusma.identity/ --output C:/inetpub/wwwroot/pierrethelusma.com_identity/"
+        },
+        web: {
+            bat "cd ./pierrethelusma.web/ && npm install && ng build --output-path C:/inetpub/wwwroot/pierrethelusma.com_web/ && cd .."
         }
     }
 
