@@ -23,6 +23,10 @@ node {
 
     stage('Publish') {
         echo "Publishing from build"
+
+        echo "Stopping IIS"
+        bat "iisreset /stop"
+
         parallel api: {
             bat "dotnet publish ./pierrethelusma.api/ --output C:/inetpub/wwwroot/pierrethelusma.com_api/"
         },
@@ -32,9 +36,8 @@ node {
         web: {
             bat "cd ./pierrethelusma.web/ && npm install && ng build --output-path C:/inetpub/wwwroot/pierrethelusma.com_web/ && cd .."
         }
-    }
 
-    stage('Deploy') {
-        echo "Deploying"
+        echo "Starting IIS"
+        bat "iisreset /start"
     }
 }
