@@ -17,9 +17,13 @@ import { ContentComponent } from './content/content.component';
 import { AboutComponent } from './about/about.component';
 import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
 import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
+import { BlogComponent } from './blog/blog.component';
+import { ResumeComponent } from './resume/resume.component';
 
 const appRoutes: Routes = [
   { path: 'about', component: AboutComponent },
+  { path: 'resume', component: ResumeComponent },
+  { path: 'blog', component: BlogComponent },
   { path: '', component: HomeComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
@@ -33,7 +37,9 @@ const appRoutes: Routes = [
     AboutComponent,
     HomeComponent,
     PageNotFoundComponent,
-    UnauthorizedComponent
+    UnauthorizedComponent,
+    BlogComponent,
+    ResumeComponent
   ],
   imports: [
     BrowserModule,

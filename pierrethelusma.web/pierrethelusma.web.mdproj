@@ -42,7 +42,7 @@
     <None Include="src\index.html" />
     <None Include="src\main.ts" />
     <None Include="src\polyfills.ts" />
-    <None Include="src\styles.css" />
+    <None Include="src\styles.scss" />
     <None Include="src\test.ts" />
     <None Include="src\tsconfig.app.json" />
     <None Include="src\tsconfig.spec.json" />

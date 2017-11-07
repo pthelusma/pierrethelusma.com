@@ -26,37 +26,32 @@ namespace pierrethelusma.identity
         public IConfigurationRoot Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddIdentityServer()
+        public void ConfigureServices(IServiceCollection services) => services.AddIdentityServer()
                     .AddTemporarySigningCredential()
-					.AddInMemoryApiResources(new List<ApiResource>
-					{
-						new ApiResource("api1", "My API")
-					})
+                    .AddInMemoryApiResources(new List<ApiResource>
+                    {
+                        new ApiResource("api1", "My API")
+                    })
                     .AddInMemoryClients(new List<Client>
-				    {
-				        new Client
-				        {
-				            ClientId = "client",
+                    {
+                        new Client
+                        {
+                            ClientId = "pthelusma",
 
 				            // no interactive user, use the clientid/secret for authentication
 				            AllowedGrantTypes = GrantTypes.ClientCredentials,
 
 				            // secret for authentication
 				            ClientSecrets =
-				            {
-				                new Secret("secret".Sha256())
-				            },
+                            {
+                                new Secret("terasuma1".Sha256())
+                            },
 
 				            // scopes that client has access to
-				            AllowedScopes = { "api1" }
-				        }
-                    });
-            
-            // Add framework services.
-            // services.AddMvc();
-        }
+                            AllowedScopes = { "api1" },
+                            AllowedCorsOrigins = { "http://localhost:4200" }
+                        }
+                    });// Add framework services.// services.AddMvc();
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)

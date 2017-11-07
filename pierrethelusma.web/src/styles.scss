@@ -1,0 +1,162 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #252830;
+    color: #cfd2da;
+}
+
+/// Grid system
+//
+// Generate semantic grid columns with these mixins.
+
+@mixin make-container() {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: ($grid-gutter-width / 2);
+  padding-left:  ($grid-gutter-width / 2);
+  width: 100%;
+}
+
+
+// For each breakpoint, define the maximum width of the container in a media query
+@mixin make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {
+  @each $breakpoint, $container-max-width in $max-widths {
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      max-width: $container-max-width;
+    }
+  }
+}
+
+@mixin make-row() {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: ($grid-gutter-width / -2);
+  margin-left:  ($grid-gutter-width / -2);
+}
+
+@mixin make-col-ready() {
+  position: relative;
+  // Prevent columns from becoming too narrow when at smaller grid tiers by
+  // always setting `width: 100%;`. This works because we use `flex` values
+  // later on to override this initial width.
+  width: 100%;
+  min-height: 1px; // Prevent collapsing
+  padding-right: ($grid-gutter-width / 2);
+  padding-left:  ($grid-gutter-width / 2);
+}
+
+@mixin make-col($size, $columns: $grid-columns) {
+  flex: 0 0 percentage($size / $columns);
+  // Add a `max-width` to ensure content within each column does not blow out
+  // the width of the column. Applies to IE10+ and Firefox. Chrome and Safari
+  // do not appear to require this.
+  max-width: percentage($size / $columns);
+}
+
+.footer {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-top: 40px;
+  border-top: 1px solid #eee;
+}
+
+.header {
+  padding-top: 20px;
+  //padding-bottom: 20px;
+  //margin-bottom: 40px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Padding for spacing
+.inner {
+  padding: 2rem;
+}
+*/
+
+/*
+ * Header
+ */
+
+.masthead {
+  margin-bottom: 2rem;
+}
+
+.masthead-brand {
+  margin-bottom: 0;
+}
+
+.nav-masthead .nav-link {
+  padding: .25rem 0;
+  font-weight: bold;
+  color: rgba(255,255,255,.5);
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255,255,255,.25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+@media (min-width: 48em) {
+  .masthead-brand {
+    float: left;
+  }
+  .nav-masthead {
+    float: right;
+  }
+}
+
+// Base class
+//
+// Kickstart any navigation component with a set of style resets. Works with
+// `<nav>`s or `<ul>`s.
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+/*
+.nav-link {
+  display: block;
+  padding: $nav-link-padding-y $nav-link-padding-x;
+
+  @include hover-focus {
+    text-decoration: none;
+  }
+
+  // Disabled state lightens text
+  &.disabled {
+    color: $nav-link-disabled-color;
+  }
+}
+*/
+
+//
+// Typography
+//
+
+// Remove top margins from headings
+//
+// By default, `<h1>`-`<h6>` all receive top and bottom margins. We nuke the top
+// margin for easier control within type scales as it avoids margin collapsing.
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
+
+p {
+    margin: 10px 0 10px 0;
+}
